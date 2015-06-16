@@ -9,6 +9,7 @@ var gReplace = require('gulp-replace');
 var buffer = require('gulp-buffer');
 var include = require('gulp-include');
 var ignore = require('gulp-ignore');
+var imagemin = require('gulp-imagemin');
 
 program
   .option('-p, --prod', 'enforce production environment')
@@ -16,9 +17,17 @@ program
   .parse(process.argv);
 
 gulp.task('build:all', [
+  'build:images',
   'build:slides',
   'build:vendors'
 ]);
+
+gulp.task('build:images', function () {
+  return gulp.src(['./assets/**/*.jpg', './assets/**/*.png'])
+    .pipe(imagemin())
+    .pipe(gulp.dest('./build/assets/'))
+    .pipe(browserSync.reload({stream: true, once: true}));
+});
 
 gulp.task('build:slides', function () {
   var slides = [];
@@ -30,7 +39,6 @@ gulp.task('build:slides', function () {
 
   return gulp.src('./src/index.html')
     .pipe(gReplace(/\<\!\-\- replace\:slides \-\-\>/, replacement))
-    //.pipe(buffer())
     .pipe(include())
     .pipe(gulp.dest('./build/'))
     .pipe(browserSync.reload({stream: true}));
