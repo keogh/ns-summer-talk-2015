@@ -19,6 +19,7 @@ program
 gulp.task('build:all', [
   'build:images',
   'build:slides',
+  'build:css',
   'build:vendors'
 ]);
 
@@ -41,6 +42,12 @@ gulp.task('build:slides', function () {
     .pipe(gReplace(/\<\!\-\- replace\:slides \-\-\>/, replacement))
     .pipe(include())
     .pipe(gulp.dest('./build/'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('build:css', function () {
+  return gulp.src('./src/stylesheets/*.css')
+    .pipe(gulp.dest('./build/css/'))
     .pipe(browserSync.reload({stream: true}));
 });
 
