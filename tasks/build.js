@@ -30,7 +30,7 @@ gulp.task('build:slides', function () {
 
   return gulp.src('./src/index.html')
     .pipe(gReplace(/\<\!\-\- replace\:slides \-\-\>/, replacement))
-    .pipe(buffer())
+    //.pipe(buffer())
     .pipe(include())
     .pipe(gulp.dest('./build/'))
     .pipe(browserSync.reload({stream: true}));
