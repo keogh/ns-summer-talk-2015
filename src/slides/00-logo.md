@@ -1,3 +1,5 @@
+class: no-bg
+
 <div class="summertalks-header-risingsun">
   <img src="assets/risingsun.png">
 </div>

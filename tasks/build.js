@@ -18,6 +18,7 @@ program
 
 gulp.task('build:all', [
   'build:images',
+  'build:fonts',
   'build:slides',
   'build:css',
   'build:vendors'
@@ -27,6 +28,12 @@ gulp.task('build:images', function () {
   return gulp.src(['./assets/**/*.jpg', './assets/**/*.png'])
     .pipe(imagemin())
     .pipe(gulp.dest('./build/assets/'))
+    .pipe(browserSync.reload({stream: true, once: true}));
+});
+
+gulp.task('build:fonts', function () {
+  return gulp.src('./assets/fonts/**/*')
+    .pipe(gulp.dest('./build/assets/fonts'))
     .pipe(browserSync.reload({stream: true, once: true}));
 });
 
