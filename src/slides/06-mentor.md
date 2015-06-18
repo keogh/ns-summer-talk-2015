@@ -1,6 +1,6 @@
 background-image: url(assets/mentor.gif)
 
-class: bg-image
+class: bg-image, slide-green
 
 # Busca un mentor
 

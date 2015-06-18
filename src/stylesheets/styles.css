@@ -64,6 +64,26 @@ h2, .remark-slide-content h2 {
   background-color: #23b4d3;
 }
 
+.slide-red {
+  background-color: #e64d42;
+}
+
+.slide-red h1 {
+  background-color: #a73434;
+}
+
+.slide-green {
+
+}
+
+.slide-green h1 {
+  background-color: #30ad64;
+}
+
+.slide-brown h1 {
+  background-color: #785c41;
+}
+
 .bg-image {
   background-size: cover !important; 
   background-position: 50% !important;
