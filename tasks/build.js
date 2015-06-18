@@ -18,6 +18,7 @@ program
 
 gulp.task('build:all', [
   'build:images',
+  'build:gifs',
   'build:fonts',
   'build:slides',
   'build:css',
@@ -27,6 +28,12 @@ gulp.task('build:all', [
 gulp.task('build:images', function () {
   return gulp.src(['./assets/**/*.jpg', './assets/**/*.png'])
     .pipe(imagemin())
+    .pipe(gulp.dest('./build/assets/'))
+    .pipe(browserSync.reload({stream: true, once: true}));
+});
+
+gulp.task('build:gifs', function () {
+  return gulp.src(['./assets/**/*.gif'])
     .pipe(gulp.dest('./build/assets/'))
     .pipe(browserSync.reload({stream: true, once: true}));
 });

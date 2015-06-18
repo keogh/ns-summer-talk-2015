@@ -23,7 +23,7 @@ h1 {
   opacity: 0.9;
   padding-top: 6px;
   padding-bottom: 12px;
-  padding-left: 80px;
+  padding-left: 50px;
   padding-right: 15px;
   margin-left: -80px;
   display: inline-block;
@@ -49,6 +49,7 @@ h2, .remark-slide-content h2 {
 
 .slide-title h1 {
   position: absolute;
+  padding-left: 80px;
   width: 100%;
   bottom: 17%;
   left: 0;
