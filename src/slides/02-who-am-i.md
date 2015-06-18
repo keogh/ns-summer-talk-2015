@@ -10,4 +10,6 @@ Ruby, JavaScript
 
 hardcoders.mx
 
+
+<img src="assets/isaac.png" class="isaac">
 ---
