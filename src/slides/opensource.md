@@ -3,4 +3,13 @@ class: bg-image
 
 # Contribuye al Open Source
 
+
+???
+
+Puntos, curriculum
+
+Trabajo en equipo
+
+Entiendes y tu codigo es entendible
+
 ---
